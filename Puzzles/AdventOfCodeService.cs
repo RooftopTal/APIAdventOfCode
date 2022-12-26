@@ -1,6 +1,7 @@
 ﻿using AdventOfCode._2021.One;
 using AdventOfCode._2021.Two;
 using AdventOfCode._2022.One;
+using AdventOfCode._2022.Three;
 using AdventOfCode._2022.Two;
 using APIAdventOfCode.Models;
 
@@ -40,6 +41,8 @@ namespace APIAdventOfCode.Puzzles
                             return ChallengeOne2022.GetCalories();
                         case 2:
                             return ChallengeTwo2022.GetScore();
+                        case 3:
+                            return ChallengeThree2022.GetTotalPriority();
                         default:
                             throw new Exception("Invalid day");
                     }
