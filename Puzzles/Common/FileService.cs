@@ -4,7 +4,7 @@ public class FileService
 {
     public static IEnumerable<string> ReadStringInput(string inputPath)
     {
-        string inputFilePath = "C:\\Users\\Tim\\AdventOfCode\\AdventOfCode\\AdventOfCode\\" + inputPath;
+        string inputFilePath = "C:\\work\\VisualAdventOfCode\\APIAdventOfCode\\Puzzles\\" + inputPath;
         return File.ReadLines(inputFilePath);
     }
 
