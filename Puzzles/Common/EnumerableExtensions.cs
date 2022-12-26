@@ -27,4 +27,21 @@ public static class EnumerableExtensions
             yield return list;
         }
     }
+
+    public static IEnumerable<TResult> ToFormattedList<TElement, TResult>(
+        this IEnumerable<TElement> source,
+        int count,
+        Func<List<TElement>, TResult> formatter)
+    {
+        return source.SplitGroups(count).Select(arg => formatter(arg.ToList()));
+    }
+
+    public static IEnumerable<IEnumerable<T>> SplitGroups<T>(this IEnumerable<T> source, int size)
+    {
+        var i = 0;
+        return
+            from element in source
+            group element by i++ / size into splitGroups
+            select splitGroups.AsEnumerable();
+    }
 }
