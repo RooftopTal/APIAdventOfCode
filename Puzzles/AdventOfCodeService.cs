@@ -4,6 +4,7 @@ using AdventOfCode._2022.One;
 using AdventOfCode._2022.Three;
 using AdventOfCode._2022.Two;
 using APIAdventOfCode.Models;
+using APIAdventOfCode.Puzzles._2022.Four;
 
 namespace APIAdventOfCode.Puzzles
 {
@@ -43,6 +44,8 @@ namespace APIAdventOfCode.Puzzles
                             return ChallengeTwo2022.GetScore();
                         case 3:
                             return ChallengeThree2022.GetTotalPriority();
+                        case 4:
+                            return ChallengeFour2022.GetMatchingIDs();
                         default:
                             throw new Exception("Invalid day");
                     }
