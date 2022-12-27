@@ -1,7 +1,7 @@
-using AdventOfCode._2021.One.Objects;
+using AdventOfCode.Puzzles._2021.Objects;
 using AdventOfCode.Common;
 
-namespace AdventOfCode._2021.One;
+namespace AdventOfCode.Puzzles._2021.Challenges;
 
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ public class ChallengeOne2021
 
     private static IEnumerable<int> ReadDepths()
     {
-        string inputFilePath = "2021\\One\\OneInput.txt";
+        string inputFilePath = "_2021\\Input\\OneInput.txt";
         return FileService.ReadIntInput(inputFilePath);
     }
 }

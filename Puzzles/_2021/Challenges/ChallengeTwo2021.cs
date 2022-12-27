@@ -1,7 +1,7 @@
-using AdventOfCode._2021.Two.Objects;
+using AdventOfCode.Puzzles._2021.Objects;
 using AdventOfCode.Common;
 
-namespace AdventOfCode._2021.Two;
+namespace AdventOfCode.Puzzles._2021.Challenges;
 
 internal class ChallengeTwo2021
 {
@@ -49,7 +49,7 @@ internal class ChallengeTwo2021
 
     private static IEnumerable<string> ReadSourceDirections()
     {
-        string inputFilePath = "2021\\Two\\TwoInput.txt";
+        string inputFilePath = "_2021\\Input\\TwoInput.txt";
         return FileService.ReadStringInput(inputFilePath);
     }
 }

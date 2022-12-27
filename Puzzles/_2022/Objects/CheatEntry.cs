@@ -1,4 +1,8 @@
-namespace AdventOfCode._2022.Two.Objects;
+using AdventOfCode.Puzzles._2022;
+using AdventOfCode.Puzzles._2022.Objects;
+using APIAdventOfCode.Puzzles._2022.Constants;
+
+namespace APIAdventOfCode.Puzzles._2022.Objects;
 
 public class CheatEntry
 {
@@ -74,7 +78,7 @@ public class CheatEntry
                 throw new Exception("Unknown RPS mapping: " + input);
         }
     }
-    
+
     private ScoreEnum ToRequiredResult(string input)
     {
         switch (input)

@@ -1,10 +1,6 @@
-﻿using AdventOfCode._2021.One;
-using AdventOfCode._2021.Two;
-using AdventOfCode._2022.One;
-using AdventOfCode._2022.Three;
-using AdventOfCode._2022.Two;
+﻿using AdventOfCode.Puzzles._2021.Challenges;
+using AdventOfCode.Puzzles._2022.Challenges;
 using APIAdventOfCode.Models;
-using APIAdventOfCode.Puzzles._2022.Four;
 
 namespace APIAdventOfCode.Puzzles
 {

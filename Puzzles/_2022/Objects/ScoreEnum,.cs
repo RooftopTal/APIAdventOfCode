@@ -1,4 +1,4 @@
-namespace AdventOfCode._2022.Two.Objects;
+namespace APIAdventOfCode.Puzzles._2022.Objects;
 
 public enum ScoreEnum
 {

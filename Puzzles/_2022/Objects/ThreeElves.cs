@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-
-namespace APIAdventOfCode.Puzzles._2022.Three
+﻿namespace APIAdventOfCode.Puzzles._2022.Objects
 {
     public class ThreeElves
     {

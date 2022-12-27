@@ -1,6 +1,6 @@
 using AdventOfCode.Common;
 
-namespace AdventOfCode._2022.One;
+namespace AdventOfCode.Puzzles._2022.Challenges;
 
 public static class ChallengeOne2022
 {
@@ -18,7 +18,7 @@ public static class ChallengeOne2022
 
     private static IEnumerable<IEnumerable<int>> ReadElfList()
     {
-        string inputFilePath = "2022\\One\\OneInput.txt";
+        string inputFilePath = "_2022\\Input\\OneInput.txt";
         IEnumerable<string> rawCalories = FileService.ReadStringInput(inputFilePath);
         return rawCalories.ToList()
             .Split(String.IsNullOrEmpty)

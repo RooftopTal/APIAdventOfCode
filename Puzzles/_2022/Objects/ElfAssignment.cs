@@ -1,15 +1,15 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace APIAdventOfCode.Puzzles._2022.Four.Objects
+namespace APIAdventOfCode.Puzzles._2022.Objects
 {
     public class ElfAssignment
     {
-        String _assignmentPattern = @"(\d)+";
+        string _assignmentPattern = @"(\d)+";
 
         List<int> _elfOneAssignments;
         List<int> _elfTwoAssignments;
 
-        public ElfAssignment(String assignmentInput)
+        public ElfAssignment(string assignmentInput)
         {
             Regex assignmentRegex = new Regex(_assignmentPattern);
             MatchCollection assignments = assignmentRegex.Matches(assignmentInput);
@@ -25,7 +25,8 @@ namespace APIAdventOfCode.Puzzles._2022.Four.Objects
             if (_elfOneAssignments.Count() >= _elfTwoAssignments.Count())
             {
                 return _elfOneAssignments.Intersect(_elfTwoAssignments).Count() == _elfTwoAssignments.Count();
-            } else
+            }
+            else
             {
                 return _elfTwoAssignments.Intersect(_elfOneAssignments).Count() == _elfOneAssignments.Count();
             }
@@ -47,15 +48,15 @@ namespace APIAdventOfCode.Puzzles._2022.Four.Objects
         private Tuple<IEnumerable<int>, IEnumerable<int>> GetElfAssignments(MatchCollection assignments)
         {
             return Tuple.Create(
-                Enumerable.Range(ParseInt(assignments[0]), ParseInt(assignments[1])-ParseInt(assignments[0])+1),
-                Enumerable.Range(ParseInt(assignments[2]), ParseInt(assignments[3])-ParseInt(assignments[2])+1)
+                Enumerable.Range(ParseInt(assignments[0]), ParseInt(assignments[1]) - ParseInt(assignments[0]) + 1),
+                Enumerable.Range(ParseInt(assignments[2]), ParseInt(assignments[3]) - ParseInt(assignments[2]) + 1)
             );
         }
 
         private int ParseInt(Match match)
         {
             int parsed;
-            Int32.TryParse(match.ToString(), out parsed);
+            int.TryParse(match.ToString(), out parsed);
             return parsed;
         }
     }

@@ -1,6 +1,7 @@
-using AdventOfCode._2022.Two.Objects;
+using AdventOfCode.Puzzles._2022.Objects;
+using APIAdventOfCode.Puzzles._2022.Objects;
 
-namespace AdventOfCode._2022.Two;
+namespace APIAdventOfCode.Puzzles._2022.Constants;
 
 public class TwoConstants
 {

@@ -1,4 +1,4 @@
-namespace AdventOfCode._2021.Two.Objects;
+namespace AdventOfCode.Puzzles._2021.Objects;
 
 public enum BearingEnum
 {
