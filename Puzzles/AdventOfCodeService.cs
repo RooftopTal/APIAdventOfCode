@@ -42,6 +42,8 @@ namespace APIAdventOfCode.Puzzles
                             return ChallengeThree2022.GetTotalPriority();
                         case 4:
                             return ChallengeFour2022.GetMatchingIDs();
+                        case 5:
+                            return ChallengeFive2022.GetCraneMovements();
                         default:
                             throw new Exception("Invalid day");
                     }

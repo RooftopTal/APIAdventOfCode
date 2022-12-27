@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using APIAdventOfCode.Puzzles.Common;
+using System.Text.RegularExpressions;
 
 namespace APIAdventOfCode.Puzzles._2022.Objects
 {
@@ -47,17 +48,15 @@ namespace APIAdventOfCode.Puzzles._2022.Objects
 
         private Tuple<IEnumerable<int>, IEnumerable<int>> GetElfAssignments(MatchCollection assignments)
         {
-            return Tuple.Create(
-                Enumerable.Range(ParseInt(assignments[0]), ParseInt(assignments[1]) - ParseInt(assignments[0]) + 1),
-                Enumerable.Range(ParseInt(assignments[2]), ParseInt(assignments[3]) - ParseInt(assignments[2]) + 1)
-            );
-        }
+            int oneStart = MatchService.ParseInt(assignments[0]);
+            int oneEnd = MatchService.ParseInt(assignments[1]);
+            int twoStart = MatchService.ParseInt(assignments[2]);
+            int twoEnd = MatchService.ParseInt(assignments[3]);
 
-        private int ParseInt(Match match)
-        {
-            int parsed;
-            int.TryParse(match.ToString(), out parsed);
-            return parsed;
+            return Tuple.Create(
+                Enumerable.Range(oneStart, oneEnd - oneStart + 1),
+                Enumerable.Range(twoStart, twoEnd - twoStart + 1)
+            );
         }
     }
 }
