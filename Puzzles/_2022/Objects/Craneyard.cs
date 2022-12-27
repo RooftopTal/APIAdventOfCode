@@ -14,7 +14,7 @@ namespace APIAdventOfCode.Puzzles._2022.Objects
             Console.WriteLine("Done");
         }
 
-        public void ApplyMove(CraneMove move)
+        public void ApplyMove9000(CraneMove move)
         {
             for (int i = 0; i < move.NumberToMove; i++) {
                 List<char> fromPile = _crateyardContents[move.From];
@@ -22,8 +22,22 @@ namespace APIAdventOfCode.Puzzles._2022.Objects
                 char movedCrate = fromPile.Last();
 
                 _crateyardContents[move.To].Add(movedCrate);
-                _crateyardContents[move.From].RemoveAt(fromPile.Count() - 1);
+
+                int lastIndex = fromPile.Count() - 1;
+                _crateyardContents[move.From].RemoveAt(lastIndex);
             }
+        }
+
+        public void ApplyMove9001(CraneMove move)
+        {
+            List<char> fromPile = _crateyardContents[move.From];
+            List<char> toPile = _crateyardContents[move.To];
+            IEnumerable<char> movedCrates = fromPile.TakeLast(move.NumberToMove);
+
+            _crateyardContents[move.To].AddRange(movedCrates);
+
+            int removeFrom = fromPile.Count() - move.NumberToMove;
+            _crateyardContents[move.From].RemoveRange(removeFrom, move.NumberToMove);
         }
 
         public IEnumerable<char> GetTopCrates()

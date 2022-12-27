@@ -12,7 +12,7 @@ public class ChallengeFive2022
 
         foreach (CraneMove move in moves)
         {
-            craneyard.ApplyMove(move);
+            craneyard.ApplyMove9001(move);
         }
         IEnumerable<char> topCrates = craneyard.GetTopCrates();
 
