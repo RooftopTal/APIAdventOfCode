@@ -7,7 +7,9 @@ public class FileService
     public static IEnumerable<string> ReadStringInput(string inputPath)
     {
         string baseDirectory = Directory.GetCurrentDirectory();
-        string path = Path.Combine(baseDirectory, inputPath);
+        IEnumerable<string> splitPath = inputPath.Split("\\").Prepend(baseDirectory);
+
+        string path = Path.Combine(splitPath.ToArray());
         return File.ReadLines(path);
     }
 
