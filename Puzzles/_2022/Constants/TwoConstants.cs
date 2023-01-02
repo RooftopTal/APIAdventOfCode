@@ -1,5 +1,4 @@
-using AdventOfCode.Puzzles._2022.Objects;
-using APIAdventOfCode.Puzzles._2022.Objects;
+using APIAdventOfCode.Puzzles._2022.Objects.Enums;
 
 namespace APIAdventOfCode.Puzzles._2022.Constants;
 
