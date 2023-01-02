@@ -21,14 +21,14 @@ public class ChallengeFive2022
 
     private static Craneyard GetCraneSetup()
     {
-        string inputFilePath = "_2022\\Input\\FiveInputCrane.txt";
+        string inputFilePath = "Puzzles\\_2022\\Input\\FiveInputCrane.txt";
         IEnumerable<String> craneyardLevels = FileService.ReadStringInput(inputFilePath);
         return new Craneyard(craneyardLevels);
     }
 
     private static IEnumerable<CraneMove> GetMoves()
     {
-        string inputFilePath = "_2022\\Input\\FiveInputMoves.txt";
+        string inputFilePath = "Puzzles\\_2022\\Input\\FiveInputMoves.txt";
         return FileService.ReadStringInput(inputFilePath)
             .Select(x => new CraneMove(x));
     }

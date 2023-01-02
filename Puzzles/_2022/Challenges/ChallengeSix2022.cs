@@ -15,7 +15,7 @@ public class ChallengeSix2022
 
     private static Communique GetCommunique()
     {
-        String inputFilePath = "_2022\\Input\\SixInput.txt";
+        String inputFilePath = "Puzzles\\_2022\\Input\\SixInput.txt";
         IEnumerable<String> fullCommunique = FileService.ReadStringInput(inputFilePath);
         ValidateCommunique(fullCommunique);
         return new Communique(fullCommunique.First());

@@ -15,7 +15,7 @@ public class ChallengeSeven2022
 
     private static FileSystem GetFileSystem()
     {
-        String inputFilePath = "_2022\\Input\\SevenInput.txt";
+        String inputFilePath = "Puzzles\\_2022\\Input\\SevenInput.txt";
         IEnumerable<String> consoleInput = FileService.ReadStringInput(inputFilePath);
         return new FileSystem(consoleInput);
     }

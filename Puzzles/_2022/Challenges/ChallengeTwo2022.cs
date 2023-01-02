@@ -13,7 +13,7 @@ public class ChallengeTwo2022
 
     private static IEnumerable<CheatEntry> ReadCheatSheet()
     {
-        string inputFilePath = "_2022\\Input\\TwoInput.txt";
+        string inputFilePath = "Puzzles\\_2022\\Input\\TwoInput.txt";
         return FileService.ReadStringInput(inputFilePath)
             .Select(x => x.Split(' '))
             .Select(x => new CheatEntry(x[0], x[1]));

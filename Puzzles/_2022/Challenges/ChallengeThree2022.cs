@@ -17,14 +17,14 @@ public class ChallengeThree2022
 
     private static IEnumerable<Rucksack> ReadCheatSheet()
     {
-        string inputFilePath = "_2022\\Input\\ThreeInput.txt";
+        string inputFilePath = "Puzzles\\_2022\\Input\\ThreeInput.txt";
         return FileService.ReadStringInput(inputFilePath)
             .Select(x => new Rucksack(x));
     }
 
     private static IEnumerable<ThreeElves> ReadElfGroups()
     {
-        string inputFilePath = "_2022\\Input\\ThreeInput.txt";
+        string inputFilePath = "Puzzles\\_2022\\Input\\ThreeInput.txt";
         return FileService.ReadStringInput(inputFilePath)
             .ToFormattedList(3, args => new ThreeElves(args[0], args[1], args[2]));
 

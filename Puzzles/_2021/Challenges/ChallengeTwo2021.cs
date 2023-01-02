@@ -49,7 +49,7 @@ internal class ChallengeTwo2021
 
     private static IEnumerable<string> ReadSourceDirections()
     {
-        string inputFilePath = "_2021\\Input\\TwoInput.txt";
+        string inputFilePath = "Puzzles\\_2021\\Input\\TwoInput.txt";
         return FileService.ReadStringInput(inputFilePath);
     }
 }

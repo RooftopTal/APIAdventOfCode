@@ -1,11 +1,14 @@
+using System.Reflection;
+
 namespace AdventOfCode.Common;
 
 public class FileService
 {
     public static IEnumerable<string> ReadStringInput(string inputPath)
     {
-        string inputFilePath = "C:\\work\\VisualAdventOfCode\\APIAdventOfCode\\Puzzles\\" + inputPath;
-        return File.ReadLines(inputFilePath);
+        string baseDirectory = Directory.GetCurrentDirectory();
+        string path = Path.Combine(baseDirectory, inputPath);
+        return File.ReadLines(path);
     }
 
     public static IEnumerable<int> ReadIntInput(string inputPath)

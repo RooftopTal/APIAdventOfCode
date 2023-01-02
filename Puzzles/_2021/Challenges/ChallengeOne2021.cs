@@ -34,7 +34,7 @@ public class ChallengeOne2021
 
     private static IEnumerable<int> ReadDepths()
     {
-        string inputFilePath = "_2021\\Input\\OneInput.txt";
+        string inputFilePath = "Puzzles\\_2021\\Input\\OneInput.txt";
         return FileService.ReadIntInput(inputFilePath);
     }
 }

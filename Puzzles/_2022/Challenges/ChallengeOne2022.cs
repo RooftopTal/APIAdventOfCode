@@ -18,7 +18,7 @@ public static class ChallengeOne2022
 
     private static IEnumerable<IEnumerable<int>> ReadElfList()
     {
-        string inputFilePath = "_2022\\Input\\OneInput.txt";
+        string inputFilePath = "Puzzles\\_2022\\Input\\OneInput.txt";
         IEnumerable<string> rawCalories = FileService.ReadStringInput(inputFilePath);
         return rawCalories.ToList()
             .Split(String.IsNullOrEmpty)

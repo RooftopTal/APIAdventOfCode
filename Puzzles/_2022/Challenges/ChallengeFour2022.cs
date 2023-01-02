@@ -16,7 +16,7 @@ public class ChallengeFour2022
 
     private static IEnumerable<ElfAssignment> GetElfAssignments()
     {
-        string inputFilePath = "_2022\\Input\\FourInput.txt";
+        string inputFilePath = "Puzzles\\_2022\\Input\\FourInput.txt";
         return FileService.ReadStringInput(inputFilePath)
             .Select(x => new ElfAssignment(x));
           
