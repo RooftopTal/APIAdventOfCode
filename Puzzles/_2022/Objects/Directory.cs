@@ -26,7 +26,7 @@
             return childDirectorySize + FindChildFileSize();
         }
 
-        private int FindChildFileSize()
+        public int FindChildFileSize()
         {
             return ChildFiles.Select(x => x.Size)
                 .Sum();

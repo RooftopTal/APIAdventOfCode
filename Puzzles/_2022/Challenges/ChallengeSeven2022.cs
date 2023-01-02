@@ -8,7 +8,9 @@ public class ChallengeSeven2022
     public static string GetDirectorySizes()
     {
         FileSystem fileSystem = GetFileSystem();
-        return fileSystem.GetTotalDirectorySizeUnderCutoff().ToString();
+        //return fileSystem.GetTotalDirectorySizeUnderCutoff().ToString();
+        APIAdventOfCode.Puzzles._2022.Objects.Directory dirToDelete = fileSystem.GetBestDirectoryToDelete();
+        return dirToDelete.FindDirectorySize().ToString();
     }
 
     private static FileSystem GetFileSystem()

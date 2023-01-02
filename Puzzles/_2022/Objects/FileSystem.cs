@@ -4,12 +4,17 @@ namespace APIAdventOfCode.Puzzles._2022.Objects
 {
     public class FileSystem
     {
-        private readonly int _directorySizeCutoff = 100000;
+        private const int _defaultCutoff = 100000;
+        private readonly int _totalFileSpace = 70000000;
+        private readonly int _freeSpaceNeeded = 30000000;
+        private readonly int _existingFreeSpace;
+        private readonly int _smallestPossibleDeletion;
+
         private Directory _baseDirectory;
         private Directory? _currentFocus;
 
         public FileSystem(IEnumerable<string> consoleInput) {
-            _baseDirectory = new Directory("", null);
+            _baseDirectory = new Directory("/", null);
             _currentFocus = _baseDirectory;
 
             foreach (string line in consoleInput)
@@ -22,27 +27,52 @@ namespace APIAdventOfCode.Puzzles._2022.Objects
                     HandleContent(line);
                 }
             }
+
+            _existingFreeSpace = _totalFileSpace - _baseDirectory.FindDirectorySize();
+            _smallestPossibleDeletion = _freeSpaceNeeded - _existingFreeSpace;
         }
 
-        public int GetTotalDirectorySizeUnderCutoff()
+        public int GetTotalDirectorySizeUnderCutoff(int cutoff = _defaultCutoff)
         {
             var totalSize = 0;
-            RecursiveCheckTotalSizeUnderCutoff(_baseDirectory, ref totalSize);
+            RecursiveCheckTotalSizeUnderCutoff(cutoff, _baseDirectory, ref totalSize);
 
             return totalSize;
         }
 
-        private void RecursiveCheckTotalSizeUnderCutoff(Directory dir, ref int totalSize)
+        public Directory GetBestDirectoryToDelete() { 
+            var bestDirectoryToDelete = _baseDirectory;
+            RecursiveGetBestDirectoryToDelete(_baseDirectory, ref bestDirectoryToDelete);
+
+            return bestDirectoryToDelete;
+        }
+
+        private void RecursiveGetBestDirectoryToDelete(Directory dir, ref Directory dirToDelete)
         {
             int currentDirSize = dir.FindDirectorySize();
-            if (currentDirSize <= _directorySizeCutoff)
+            if (currentDirSize >= _smallestPossibleDeletion && 
+                currentDirSize <= dirToDelete.FindDirectorySize())
+            {
+                dirToDelete = dir;
+            }
+
+            foreach (Directory childDir in dir.ChildDirectories)
+            {
+                RecursiveGetBestDirectoryToDelete(childDir, ref dirToDelete);
+            }
+        }
+
+        private void RecursiveCheckTotalSizeUnderCutoff(int cutoff, Directory dir, ref int totalSize)
+        {
+            int currentDirSize = dir.FindDirectorySize();
+            if (currentDirSize <= cutoff)
             {
                 totalSize += currentDirSize;
             }
 
             foreach (Directory childDir in dir.ChildDirectories)
             {
-                RecursiveCheckTotalSizeUnderCutoff(childDir, ref totalSize);
+                RecursiveCheckTotalSizeUnderCutoff(cutoff, childDir, ref totalSize);
             }
         }
 
