@@ -8,7 +8,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("BasicPolicy",
         policy =>
         {
-            policy.WithOrigins("https://localhost:4200")
+            policy.WithOrigins(
+                "https://localhost:4200",
+                "http://localhost:4200",
+                "https://visual-advent-of-code.herokuapp.com",
+                "https://visual-advent-of-code.herokuapp.com")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });
